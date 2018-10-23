@@ -1,0 +1,16 @@
+
+=link_to "Nuevo artículo",articles_new_path,class:"btn btn-primary"
+- @articles.each do |article|
+	h1= article.title
+  	div
+    	p
+  			=article.body  
+  			=link_to " Ver " ,article,class:"btn btn-large btn-primary"
+  			=link_to " Editar " ,edit_article_path(article),class:"btn btn-large btn-success"
+  			=link_to " Eliminar " ,article,method: :delete,class:"btn btn-large btn-danger"      		
+
+  			/= link_to 'Ver',article_path  #es enviando a su show
+			
+  			/-paramet={"id" => article.id ,
+      					/"format"=> "show"}
+			/-@article=article #se vuelve de clase para poder realizar crud despues			

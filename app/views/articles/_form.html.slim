@@ -1,0 +1,14 @@
+-name ||= "Crear"
+h1
+	=name
+	| Articulo
+= form_for(@article) do |f|
+		-@article.errors.full_messages.each do |message|
+			.red-white.more-margin
+				="*#{message}"
+		.field.more-margin
+	    	= f.text_field :title ,placeholder: "Título del Artículo",class:"form-control"
+	  	.field.text-article.more-margin
+			= f.text_area :body ,placeholder: "Escribe aquí el artículo",class:"form-control text-area-new"
+		.field.more-margin
+			= f.submit "Guardar",class:"btn btn-lg btn-dark"

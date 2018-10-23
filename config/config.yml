@@ -1,0 +1,16 @@
+default: &default
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+  sharetribe_mail_from_address: <%= ENV["SHARETRIBE_MAIL_FROM_ADDRESS"] %>
+  app_encryption_key: <%= ENV["APP_ENCRYPTION_KEY"] %>
+
+development:
+  <<: *default
+  
+test:
+  <<: *default
+
+staging:
+  <<: *default
+
+production:
+  <<: *default

@@ -1,0 +1,50 @@
+$roboto_font: 'Roboto', sans-serif;
+
+body{
+	font-family: $roboto_font;
+}
+
+.custom_p{
+	p{
+		margin-left:10px;
+	}
+}
+.red-white{
+	background-color: rgb(200,50,50);
+	color: white; 	
+}
+.large_padding{
+	padding: 15px 15px 15px 15px;
+}
+nav{
+	//@extend 
+	font-size:1.2em;
+	a{
+		color: white;
+	}
+	a:hover{
+		color: white;
+	}
+}
+
+.no_margin{
+	margin: 0 0 0 0;
+}
+.more-margin{
+	margin-top:1em;
+	
+	
+}
+
+.form-control{
+	border-bottom:1px solid;
+	outline:none;
+	width:100%;
+	display:block;
+	padding: 10px 0px;
+	font-size:1.2em;
+}
+.text-area-new{
+	height:280px;
+
+}

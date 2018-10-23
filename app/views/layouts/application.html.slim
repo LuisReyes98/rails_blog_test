@@ -1,0 +1,31 @@
+doctype html
+html lang="es"
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title Blog
+    /! este archivo es una plantilla que se repite por toda la pagina web
+    /! abajo de mi estan los link añadidos para este projecto
+    /fuente roboto
+    link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" 
+
+    /script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"
+    
+    /! aquí se pueden poner links de fuentes entre otras cosas para que lo tengan todas las vistas
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    
+  body
+    header
+      nav.red-white.row.container.col-md-12
+        ul.navbar.nav.col-md-12
+          h1.no_margin.col-md-3 Blog Cool
+          li.col-md-2
+            = link_to "Inicio",root_path
+          li.col-md-2
+            =link_to "Articulos",articles_path
+          li.col-md-2
+            =link_to "Usuarios",users_path
+  = yield 
+  == yield :scripts

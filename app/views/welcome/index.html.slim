@@ -1,0 +1,49 @@
+.container
+	h1 Bienvenidos a nuestra pagina
+	.card.custom_p	
+		- [1,2,3,4].each do |number|
+		  	p
+				| Número: #{number}
+		- mundo = "Luis"
+		= "Hola #{mundo}"
+		= link_to "Recurso con POST","/welcome/index",method: :post
+		
+
+	#app
+		p the dude below me is being called by axios :O
+		br
+		p v-text="status"
+/se incluye el javascript por archivo
+/== javascript_include_tag 'nombre_del_archivo'
+
+//se incluye el javacript por codigo fuente
+/javascript:
+
+== content_for :scripts do
+	javascript:
+		
+		$(document).ready(function(){
+			var vm= new Vue({
+				el:'#app',
+				data: {
+					status:'Hello world'
+				},
+				created: function(){
+					this.go();
+				},
+				methods: {
+					go: function(){
+						this.status= "Loading...";
+						var vm=this;
+						axios.get('http://ron-swanson-quotes.herokuapp.com/v2/quotes')//best api ever
+						.then(function(response){
+							vm.status= response.data[0];
+						})
+						.catch(function(error){
+							vr.status="An error Ocurred: "+error;
+						});
+					}
+				}
+			});
+			console.log("Hola")		
+		})
